@@ -27,4 +27,26 @@ class MyProblemTest {
         assertFalse(result);
     }
 
+    @Test
+    @DisplayName("ปิดด้วย ] ?")
+    public void case03() {
+        // Arrange
+        MyProblem myProblem = new MyProblem("[1,5]");
+        // Act
+        boolean result = myProblem.isEndWithInclude();
+        // Assert
+        assertTrue(result);
+    }
+
+    @Test
+    @DisplayName("ปิดด้วย ) ?")
+    public void case04() {
+        // Arrange
+        MyProblem myProblem = new MyProblem("[1,5)");
+        // Act
+        boolean result = myProblem.isEndWithInclude();
+        // Assert
+        assertFalse(result);
+    }
+
 }

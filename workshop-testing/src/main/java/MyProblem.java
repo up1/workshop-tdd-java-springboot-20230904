@@ -10,4 +10,7 @@ public class MyProblem {
         return this.input.startsWith("[");
     }
 
+    public boolean isEndWithInclude() {
+        return this.input.endsWith("]");
+    }
 }
