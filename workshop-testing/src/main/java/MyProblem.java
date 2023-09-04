@@ -22,4 +22,13 @@ public class MyProblem {
     public boolean isEndWithInclude() {
         return this.input.endsWith("]");
     }
+
+    public int getEndNumber() {
+        int result = Integer.parseInt(
+                String.valueOf(input.charAt(3)));
+        if(isEndWithInclude()) {
+            return result;
+        }
+        return result - 1;
+    }
 }
