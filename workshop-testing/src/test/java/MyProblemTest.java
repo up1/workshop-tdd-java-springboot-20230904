@@ -55,7 +55,7 @@ class MyProblemTest {
         // Arrange
         MyProblem myProblem = new MyProblem("[1,5)");
         // Act
-        int result = myProblem.getStart();
+        int result = myProblem.getStartNumber();
         // Assert
         assertEquals(1, result);
     }
@@ -66,7 +66,7 @@ class MyProblemTest {
         // Arrange
         MyProblem myProblem = new MyProblem("(1,5)");
         // Act
-        int result = myProblem.getStart();
+        int result = myProblem.getStartNumber();
         // Assert
         assertEquals(2, result);
     }

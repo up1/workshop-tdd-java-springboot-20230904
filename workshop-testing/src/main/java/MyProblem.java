@@ -6,7 +6,7 @@ public class MyProblem {
         this.input = input;
     }
 
-    public int getStart(){
+    public int getStartNumber(){
         int result = Integer.parseInt(
                 String.valueOf(input.charAt(1)));
         if(isStartWithInclude()) {
