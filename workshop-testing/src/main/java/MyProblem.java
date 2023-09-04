@@ -31,4 +31,14 @@ public class MyProblem {
         }
         return result - 1;
     }
+
+    public String process() {
+        StringBuilder result = new StringBuilder();
+        int start = getStartNumber();
+        int end = getEndNumber();
+        for (int i = start; i <= end ; i++) {
+            result.append(i);
+        }
+        return result.toString();
+    }
 }

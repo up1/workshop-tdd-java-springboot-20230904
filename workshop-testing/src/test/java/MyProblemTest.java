@@ -93,4 +93,15 @@ class MyProblemTest {
         assertEquals(8, result);
     }
 
+    @Test
+    @DisplayName("ข้อมูล [1,5] => 12345")
+    public void case09() {
+        // Arrange
+        MyProblem myProblem = new MyProblem("[1,5]");
+        // Act
+        String result = myProblem.process();
+        // Assert
+        assertEquals("12345", result);
+    }
+
 }
