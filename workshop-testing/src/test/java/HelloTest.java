@@ -6,7 +6,9 @@ public class HelloTest {
     @Test
     @DisplayName("input อะไร ทำอะไร แล้วต้องได้อะไร")
     public void success_with_expected_result() {
-
+        // Arrange => pre-condition => given
+        // Act => testing
+        // Assert => validate/verify/check with expected result
     }
 
     @Test
