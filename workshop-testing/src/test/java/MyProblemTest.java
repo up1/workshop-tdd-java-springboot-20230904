@@ -49,4 +49,26 @@ class MyProblemTest {
         assertFalse(result);
     }
 
+    @Test
+    @DisplayName("เริ่มด้วย [1,5] => 1")
+    public void case05() {
+        // Arrange
+        MyProblem myProblem = new MyProblem("[1,5)");
+        // Act
+        int result = myProblem.getStart();
+        // Assert
+        assertEquals(1, result);
+    }
+
+    @Test
+    @DisplayName("เริ่มด้วย (1,5] => 2")
+    public void case06() {
+        // Arrange
+        MyProblem myProblem = new MyProblem("(1,5)");
+        // Act
+        int result = myProblem.getStart();
+        // Assert
+        assertEquals(2, result);
+    }
+
 }
