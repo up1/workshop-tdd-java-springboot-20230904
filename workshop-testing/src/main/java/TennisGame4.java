@@ -2,8 +2,8 @@ public class TennisGame4 implements TennisGame {
 
     int serverScore;
     int receiverScore;
-    String server;
-    String receiver;
+    final String server;
+    final String receiver;
 
     public TennisGame4(String player1, String player2) {
         this.server = player1;
@@ -51,8 +51,8 @@ public class TennisGame4 implements TennisGame {
 }
 
 class TennisResult {
-    String serverScore;
-    String receiverScore;
+    final String serverScore;
+    final String receiverScore;
 
     TennisResult(String serverScore, String receiverScore) {
         this.serverScore = serverScore;
