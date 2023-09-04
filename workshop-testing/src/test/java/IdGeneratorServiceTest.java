@@ -1,9 +1,7 @@
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.Random;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MockRandomWith5 implements MyRandom {
     @Override
@@ -19,12 +17,7 @@ class IdGeneratorServiceTest {
     public void case01() {
         // Arrange
         // Stub
-        MyRandom random = new MyRandom(){
-            @Override
-            public int nextInt(int bound) {
-                return 5;
-            }
-        };
+        MyRandom random;
 
         random = new MockRandomWith5();
         IdGeneratorService service = new IdGeneratorService();
