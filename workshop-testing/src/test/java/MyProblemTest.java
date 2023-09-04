@@ -16,4 +16,15 @@ class MyProblemTest {
         assertTrue(result);
     }
 
+    @Test
+    @DisplayName("เริ่มด้วย (")
+    public void case02() {
+        // Arrange
+        MyProblem myProblem = new MyProblem("(1,5]");
+        // Act
+        boolean result = myProblem.isStartWithInclude();
+        // Assert
+        assertFalse(result);
+    }
+
 }
