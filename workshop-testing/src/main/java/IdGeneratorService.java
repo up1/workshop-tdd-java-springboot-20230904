@@ -2,9 +2,10 @@ import java.util.Random;
 
 public class IdGeneratorService {
 
-    public String process() {
+    // Method injection
+    public String process(Random r) {
         String id = "START-";
-        int number = new Random().nextInt(10);
+        int number = r.nextInt(10);
         return id + number;
     }
 
