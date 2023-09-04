@@ -33,6 +33,12 @@ public class MyProblem {
     }
 
     public String process() {
+        // Validate inputs
+        if(!input.startsWith("[") && !input.startsWith("(")) {
+            throw new InputInvalidException("Error case01");
+        }
+
+        // Generate result
         StringBuilder result = new StringBuilder();
         int start = getStartNumber();
         int end = getEndNumber();

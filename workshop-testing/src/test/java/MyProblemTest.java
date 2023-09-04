@@ -104,4 +104,19 @@ class MyProblemTest {
         assertEquals("12345", result);
     }
 
+    @Test
+    @DisplayName("input ไม่ถูกต้อง คือ 1,5] => throw InputInvalidException")
+    public void case10() {
+        // Arrange
+        MyProblem myProblem = new MyProblem("1,5]");
+        // Act
+        try {
+            myProblem.process();
+            fail("InputInvalidException not found !!");
+        } catch (InputInvalidException e) {
+            assertEquals("Error case01", e.getMessage());
+        }
+
+    }
+
 }
