@@ -19,7 +19,7 @@ class UserGatewayTest {
     @DisplayName("Success :: to call api from jsonplaceholder.com/users/id")
     void callApi() {
         // Act
-        Optional<UserGatewayResponse> result =  userGateway.callApi(1);
+        Optional<UserGatewayResponse> result = userGateway.callApi(1);
         // Assert
         assertTrue(result.isPresent());
     }
