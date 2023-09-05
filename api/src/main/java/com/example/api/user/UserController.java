@@ -14,7 +14,11 @@ public class UserController {
     // GET /user/1
     // http://localhost:8080/user/1
     public UserResponse getUserById(@PathVariable int id) {
-        return new UserResponse();
+        UserResponse result = new UserResponse();
+        result.setId(id);
+        result.setFirtname("Somkiat");
+        result.setLastname("Pui");
+        return result;
     }
 
 }
