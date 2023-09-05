@@ -28,8 +28,6 @@ class UserControllerMockMvcWithErrorTest {
     @Test
     void getUserByIdWithSystemError500() throws Exception {
         // Arrange
-        ErrorResponse expected = new ErrorResponse();
-        expected.setMessage("Error from Database");
         when(userService.getById(2)).thenThrow(new UserDatabaseException("Error from Database"));
         // Act and Assert
         this.mvc.perform(get("/user/2").accept(MediaType.APPLICATION_JSON))
