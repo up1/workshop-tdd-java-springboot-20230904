@@ -20,6 +20,16 @@ public class UserControllerAdvice {
         return response;
     }
 
+    @ExceptionHandler(UserDatabaseException.class)
+    public ResponseEntity<ErrorResponse> handleDatabaseError(Exception e) {
+        ErrorResponse errorResponse = new ErrorResponse();
+        errorResponse.setMessage(e.getMessage());
+        ResponseEntity<ErrorResponse> response = new ResponseEntity<>(
+                errorResponse, HttpStatus.INTERNAL_SERVER_ERROR
+        );
+        return response;
+    }
+
 }
 
 class ErrorResponse {
