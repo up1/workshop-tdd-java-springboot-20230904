@@ -12,6 +12,7 @@ public class UserController {
 
     @GetMapping("/{id}")
     // GET /user/1
+    // http://localhost:8080/user/1
     public UserResponse getUserById(@PathVariable int id) {
         return new UserResponse();
     }
