@@ -18,12 +18,17 @@ class UserControllerTest {
     @Test
     @DisplayName("Success with get user information by id = 1")
     void getUserById() {
+        // Arrange
+        UserResponse expected = new UserResponse();
+        expected.setId(1);
+        expected.setFirtname("Somkiat");
+        expected.setLastname("Pui");
         // Act
         UserResponse result = restTemplate.getForObject("/user/1", UserResponse.class);
         // Assert
         assertEquals(1, result.getId());
         assertEquals("Somkiat", result.getFirtname());
         assertEquals("Pui", result.getLastname());
-
+        assertEquals(expected, result);
     }
 }
