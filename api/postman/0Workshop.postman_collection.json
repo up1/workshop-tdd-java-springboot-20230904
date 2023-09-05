@@ -9,7 +9,7 @@
 	},
 	"item": [
 		{
-			"name": "Get user by id",
+			"name": "Get user by id with success",
 			"event": [
 				{
 					"listen": "test",
@@ -61,6 +61,49 @@
 					"path": [
 						"user",
 						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user by id with not found",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code of user by id api is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Check data in response body\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(\"User id=2 not found in our system\").to.eql(jsonData.message);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/user/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"2"
 					]
 				}
 			},
