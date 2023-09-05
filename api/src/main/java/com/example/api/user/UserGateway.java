@@ -17,7 +17,8 @@ public class UserGateway {
     public Optional<UserGatewayResponse> callApi(int id) {
         try {
             UserGatewayResponse result = restTemplate.getForObject(
-                    "https://jsonplaceholder.typicode.com/users/" + id,
+//                    "https://jsonplaceholder.typicode.com/users/" + id,
+                    "http://localhost:9999/users/" + id,
                     UserGatewayResponse.class);
             return Optional.ofNullable(result);
         } catch (RestClientException e) {
