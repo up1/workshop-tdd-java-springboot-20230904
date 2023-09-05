@@ -52,3 +52,9 @@ class UserNotFoundException extends RuntimeException {
         super(message);
     }
 }
+
+class UserDatabaseException extends RuntimeException {
+    public UserDatabaseException(String message) {
+        super(message);
+    }
+}
