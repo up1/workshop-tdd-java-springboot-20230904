@@ -1,5 +1,6 @@
 package com.example.api.user;
 
+import com.example.api.user.gateway.UserGatewayResponse;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,5 +23,6 @@ class UserGatewayTest {
         Optional<UserGatewayResponse> result = userGateway.callApi(1);
         // Assert
         assertTrue(result.isPresent());
+        assertEquals("Leanne Graham", result.get().getName());
     }
 }
