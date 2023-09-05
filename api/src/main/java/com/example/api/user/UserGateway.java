@@ -25,7 +25,6 @@ public class UserGateway {
                     UserGatewayResponse.class);
             return Optional.ofNullable(result);
         } catch (RestClientException e) {
-            e.printStackTrace();
             return Optional.empty();
         }
     }
