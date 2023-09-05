@@ -23,17 +23,18 @@ public class UserService {
     public UserResponse getById(int id){
         // Get data from API
         Optional<UserGatewayResponse> responseFromApi = userGateway.callApi(id);
-        if (responseFromApi.isPresent()) {
-            // Response from API
-            UserGatewayResponse response = responseFromApi.get();
-            // Create response to controller
-            UserResponse result = new UserResponse();
-            result.setId(response.getId());
-            result.setFirtname(response.getName());
-            result.setLastname(response.getUsername());
-            return result;
+        if (!responseFromApi.isPresent()) {
+            throw new UserNotFoundException("User id=" + id + " not found in our system");
         }
-        throw new UserNotFoundException("User id=" + id + " not found in our system");
+
+        // Response from API
+        UserGatewayResponse response = responseFromApi.get();
+        // Create response to controller
+        UserResponse result = new UserResponse();
+        result.setId(response.getId());
+        result.setFirtname(response.getName());
+        result.setLastname(response.getUsername());
+        return result;
     }
 
 }
