@@ -1,10 +1,17 @@
 package com.example.api.user;
 
 
+import com.example.api.user.gateway.UserGatewayResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class UserService {
+
+    @Autowired
+    private UserGateway userGateway;
 
     /**
      * 200 = > Success
@@ -14,12 +21,19 @@ public class UserService {
      * @return
      */
     public UserResponse getById(int id){
-//        throw new UserDatabaseException("User id="+ id +" not found in our system");
-        UserResponse result = new UserResponse();
-        result.setId(id);
-        result.setFirtname("Somkiat");
-        result.setLastname("Pui");
-        return result;
+        // Get data from API
+        Optional<UserGatewayResponse> responseFromApi = userGateway.callApi(id);
+        if (responseFromApi.isPresent()) {
+            // Response from API
+            UserGatewayResponse response = responseFromApi.get();
+            // Create response to controller
+            UserResponse result = new UserResponse();
+            result.setId(response.getId());
+            result.setFirtname(response.getName());
+            result.setLastname(response.getUsername());
+            return result;
+        }
+        throw new UserNotFoundException("User id=" + id + " not found in our system");
     }
 
 }
